@@ -1,2 +1,2 @@
 # HackEd-Alpha
-# yo yo yo waddup
+# BOT bot

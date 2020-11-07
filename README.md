@@ -1,3 +1,3 @@
 # HackEd-Alpha
-# BOT bot
+# Discord Bot
 # MASTER ("not a branch")

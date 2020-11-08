@@ -1,4 +1,4 @@
 # HackEd-Alpha
 # Discord Bot
 # MASTER ("not a branch")
-# Pranj Patel
+# Added new stuff from vids

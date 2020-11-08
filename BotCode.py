@@ -1,4 +1,3 @@
-
 #import discord package
 import os
 import random

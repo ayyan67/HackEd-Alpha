@@ -19,11 +19,6 @@ class Games(commands.Cog):
     async def on_ready(self):
             print('Games Loaded!')
 
-    
-           
-
-    
-    
 #commands
     @commands.command()
     async def RPS(self,ctx):
@@ -31,7 +26,7 @@ class Games(commands.Cog):
         emojis = ['🌑', '📃', '✂']
 
         botC = random.choice(emojis)
-        
+
         print(botC)
 
         message = await ctx.send('Choose an action!')
@@ -61,11 +56,11 @@ class Games(commands.Cog):
             if str(reaction.emoji) == emojis[1] and botC == emojis[0]:
                 await ctx.send("I chose ROCK. You WIN")
                 return
-            
+
             elif str(reaction.emoji) == emojis[1] and botC == emojis[1]:
                 await ctx.send("I chose PAPER. It's a tie I guess...")
                 return
-               
+
             elif str(reaction.emoji) == emojis[1] and botC == emojis[2]:
                  await ctx.send("I chose SCISSORS. You LOSE")
                  return
@@ -73,32 +68,14 @@ class Games(commands.Cog):
             if str(reaction.emoji) == emojis[2] and botC == emojis[0]:
                 await ctx.send("I chose ROCK. You LOSE")
                 return
-            
+
             elif str(reaction.emoji) == emojis[2] and botC == emojis[1]:
                 await ctx.send("I chose PAPER. You WIN")
                 return
-               
+
             elif str(reaction.emoji) == emojis[2] and botC == emojis[2]:
                  await ctx.send("I chose SCISSORS. It's a tie I guess...")
                  return
-
-            
-
-
-       
-
-
-        
-
-                
-        
-
-
-
-
-        
-        
-
 
     @commands.command(aliases=['8ball'])
     async def _8ball(self,ctx, *, question):
@@ -126,9 +103,6 @@ class Games(commands.Cog):
 
 
     ###########
-
-
-
 
 def setup(client):
     client.add_cog(Games(client))

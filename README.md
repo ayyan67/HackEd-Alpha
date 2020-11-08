@@ -1,6 +1,10 @@
 # HackEd-Alpha
 # Discord Bot
-# MASTER ("not a branch")
-# Pranj Patel
-# Ayyan
-# hi
+#
+# Ayyan Q, Pranj P, Krish G, Andrew S
+#
+# Discord Bot that responds to commands
+#
+# Games - rock-paper-scissors, 8ball
+# SimpleGames - answer,pick,guess
+# Webscrape - UofA escalator status

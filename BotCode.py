@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands
 import os
 
+<<<<<<< HEAD
 client = commands.Bot(command_prefix = ".")
 
 @client.command()
@@ -18,3 +19,10 @@ for filename in os.listdir('./cogs'):
 
 
 client.run('Nzc0NzQ4NTI5NTkxNzEzNzky.X6cSyw.IFD58e60AolewrYO3kHaqq6l4ZE')
+=======
+# Makes the Bot go online
+client = discord.Client()
+
+# yooo
+# Andrew
+>>>>>>> origin/Ayyan

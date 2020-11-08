@@ -1,5 +1,6 @@
 import discord
 from discord.ext import commands
+import random
 
 class Example(commands.Cog):
 
@@ -8,11 +9,12 @@ class Example(commands.Cog):
 
     @commands.Cog.listener()
     async def on_ready(self):
-        print("Ready")
+        print("Answer Ready")
 
-    @commands.command()
-    async def ping(self,ctx):
-        await ctx.send('Pong!')
+    @commands.command(aliases = ['answer'])
+    async def _answer(self,ctx,*,question):
+        answers = ['Yes','No','Maybe']
+        await ctx.send(f'Q:{question}\nA:{random.choice(answers)}')
 
 def setup(client):
     client.add_cog(Example(client))

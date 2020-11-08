@@ -64,21 +64,21 @@ class CardGame(commands.Cog):
         # display blackjack header
         await ctx.send("You are playing Blackjack...")
 
-        # initial_hand  
+        # deal the cards 
         if intial_hand:
             await ctx.send("Your cards are: [{}], Total is: {}".format(print_cards(player_cards), eval_hand(player_cards)))
-            await ctx.send("Dealer has: [{}][?]".format(dealer_cards[0]))
+            await ctx.send("Dealer's cards are: [{}][?]".format(dealer_cards[0]))
 
-        # initial_hand player win or push
+        # player win or push scenarios with initial-hand
         if (intial_hand) and (player_total == 21) and (dealer_total != 21):
             await ctx.send("BLACKJACK! You Win!")
-            await ctx.send("Dealer had: [{}], Total was: {}".format(print_cards(dealer_cards), eval_hand(dealer_cards)))
+            await ctx.send("Dealer's cards were: [{}], Total was: {}".format(print_cards(dealer_cards), eval_hand(dealer_cards)))
             flag = True
         elif (player_total == dealer_total == 21):
             await ctx.send("Push, nobody wins")
             flag = True
        
-       #    
+       # after initial-hand scenarios
         stand = False        
         while flag == False: 
 
@@ -105,6 +105,7 @@ class CardGame(commands.Cog):
                     await ctx.send("Your cards total is lower than the dealer. You Lose!")
                     break
         
+            # player is forced to stay if they do not type '!h' or '!s'
             await ctx.send(f"Please type '!h' to hit or '!s' to stay")
             message = await self.client.wait_for("message")    
             if message.content == ("!h"):
@@ -116,10 +117,14 @@ class CardGame(commands.Cog):
                 while eval_hand(dealer_cards) <= 16:
                     dealer_cards.append(cards.pop())
 
-            # print blackjack state        
+            # print blackjack state
+            # only reveal the dealer's hand once the player chooses to stay
             await ctx.send("You are playing Blackjack...")
             await ctx.send("Your cards are: [{}], Total is: {}".format(print_cards(player_cards), eval_hand(player_cards)))
-            await ctx.send("Dealer has: [{}], Total is: {}".format(print_cards(dealer_cards), eval_hand(dealer_cards)))
+            if stand == False:        
+                await ctx.send("Dealer's cards are: [{}][?]".format(dealer_cards[0]))
+            else:
+                await ctx.send("Dealer's cards are: [{}], Total is: {}".format(print_cards(dealer_cards), eval_hand(dealer_cards)))
 
 def setup(client):
     client.add_cog(CardGame(client))

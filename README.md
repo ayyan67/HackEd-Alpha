@@ -1,1 +1,7 @@
-Welcome to HackED-Alpha Bot, type !help to get started
+# HackEd-Alpha
+# Discord Bot
+# Ayyan Q, Pranj P Krish G, Andrew S
+# Discord bot that responds to commands
+# Games - rock-paper-sissors, 8ball
+# SimpleGames - answer, pick, guess
+# Webscrape - UofA escalator status

@@ -52,8 +52,8 @@ class CardGame(commands.Cog):
         player_cards.append(cards.pop())
         dealer_cards.append(cards.pop())
         
-        print("Player Cards:", player_cards)    # debug
-        print("Dealer Cards:", dealer_cards)    # debug
+        # print("Player Cards:", player_cards)    # to see player cards in the terminal
+        # print("Dealer Cards:", dealer_cards)    # to see dealer cards in the terminal
 
         player_total = eval_hand(player_cards)
         dealer_total = eval_hand(dealer_cards)
@@ -79,7 +79,7 @@ class CardGame(commands.Cog):
             flag = True
        
        # after initial-hand scenarios
-        stand = False        
+        stay = False        
         while flag == False: 
 
             # busted and win scenarios
@@ -90,9 +90,9 @@ class CardGame(commands.Cog):
                 await ctx.send("Dealer is busted, You Win!")
                 break
             
-            # stand scenarios
-            # player chooses to stand as their cards total is <= 21
-            if stand:
+            # stay scenarios
+            # player chooses to stay as their cards total is <= 21
+            if stay:
                 if eval_hand(dealer_cards) > 21:
                     await ctx.send("Dealer is busted, You Win!")
                     break 
@@ -111,7 +111,7 @@ class CardGame(commands.Cog):
             if message.content == ("!h"):
                 player_cards.append(cards.pop())
             elif (message.content == ("!s")) or (message.content == ("")):
-                stand = True
+                stay = True
                 
                 # dealer must hit until their card total is greater than 16
                 while eval_hand(dealer_cards) <= 16:
@@ -121,7 +121,7 @@ class CardGame(commands.Cog):
             # only reveal the dealer's hand once the player chooses to stay
             await ctx.send("You are playing Blackjack...")
             await ctx.send("Your cards are: [{}], Total is: {}".format(print_cards(player_cards), eval_hand(player_cards)))
-            if stand == False:        
+            if stay == False:        
                 await ctx.send("Dealer's cards are: [{}][?]".format(dealer_cards[0]))
             else:
                 await ctx.send("Dealer's cards are: [{}], Total is: {}".format(print_cards(dealer_cards), eval_hand(dealer_cards)))

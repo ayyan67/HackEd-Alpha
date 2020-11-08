@@ -1,8 +1,11 @@
 # HackEd-Alpha
 # Discord Bot
-# MASTER ("not a branch")
-# Pranj Patel
-# Ayyan
-# hi
-# Andrew
-# 01001011 01110010 01101001 01110011 01101000
+#
+# Ayyan Q, Pranj P, Krish G, Andrew S
+#
+# Discord Bot that responds to commands
+#
+# Games - rock-paper-scissors, 8ball
+# SimpleGames - answer,pick,guess
+# Card Game - Blackjack
+# Webscrape - UofA escalator status

@@ -26,16 +26,6 @@ async def on_ready():
     await client.change_presence(activity = discord.Game("HackED Beta"))
     print('Bot is ready')
    
-
-   
-
-async def on_member_join(member):
-
-    print('Someone has joined the server')
-
-    general_channel = client.get_channel(774750780715434024)
-
-    await general_channel.send(f'welcome {member}')
     
 @client.command()
 async def load(ctx,extension):

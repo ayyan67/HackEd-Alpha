@@ -49,4 +49,4 @@ async def ping(ctx):
     await ctx.send(f'Pong')
 
 #Run Client
-client.run('NTIxODk4MzcxNTMxOTMxNjYx.XA81vA.KPQmzcfc3N3p6D-FcVJm4ajppgU')
+client.run('Insert Token Here')

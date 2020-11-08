@@ -9,7 +9,7 @@ class Example(commands.Cog):
 
     @commands.Cog.listener()
     async def on_ready(self):
-        print("Guess Ready")
+        print("Ready")
 
     @commands.command()
     async def guess(self,ctx,choice):
@@ -19,7 +19,15 @@ class Example(commands.Cog):
         else:
             await ctx.send("Wow! You got it!")
 
+    @commands.command()
+    async def pick(self,ctx,*,choices):
+        stuff = choices.split()
+        await ctx.send(f'{random.choice(stuff)} seems like a good option.')
 
+    @commands.command()
+    async def answer(self,ctx,*,question):
+        answers = ['Yes','No','Maybe']
+        await ctx.send(f'Q:{question}\nA:{random.choice(answers)}')
 
 def setup(client):
     client.add_cog(Example(client))

@@ -12,8 +12,13 @@ class Example(commands.Cog):
         print("Guess Ready")
 
     @commands.command()
-    async def guess(self,ctx):
-        await ctx.send("Pick a number from 0-100:")
+    async def guess(self,ctx,choice):
+        num = random.randint(0,100)
+        if num != int(choice):
+            await ctx.send(f'My number was {num}, you were {abs(num-int(choice))} off')
+        else:
+            await ctx.send("Wow! You got it!")
+
 
 
 def setup(client):

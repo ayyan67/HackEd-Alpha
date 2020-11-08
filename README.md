@@ -1,7 +1,1 @@
-# HackEd-Alpha
-# Discord Bot
-# MASTER ("not a branch")
-# Pranj Patel
-# Ayyan
-# hi
-# ANOTHER TEST
+Welcome to HackED-Alpha Bot, type !help to get started

@@ -15,40 +15,15 @@ class webCommands(commands.Cog):
 
     #commands
     @commands.command()
-
-    async def elevators(self,ctx):
-
+    async def escalators(self,ctx):
         page = requests.get("https://uofaescalator.com/")
-
-        
         soup = BeautifulSoup(page.content, 'html.parser')
-        
-
         element = soup.find('div', {"style": "font-size:10em;color:green;"})
-
         eStatus = element.text
-
         if eStatus == "Yes.":
             await ctx.send("Yay! LRT Escalators are working")
         else:
             await ctx.send("Sorry! LRT Escalators are not working")
 
-    @commands.command()
-    async def greeting(self,ctx):
-        
-        await ctx.send('Hello')
-
-
-
-
-
 def setup(client):
         client.add_cog(webCommands(client))
-
-
-    
-
-
-
-
-

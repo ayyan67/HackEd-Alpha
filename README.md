@@ -5,6 +5,6 @@
 #
 # Discord bot that responds to commands
 #
-# Games - rock-paper-sissors, 8ball, BlackJack
+# Games - rock-paper-scissors, 8ball, BlackJack
 # SimpleGames - answer, pick, guess
 # Webscrape - UofA escalator status

@@ -11,8 +11,8 @@ class Example(commands.Cog):
     async def on_ready(self):
         print("Answer Ready")
 
-    @commands.command(aliases = ['answer'])
-    async def _answer(self,ctx,*,question):
+    @commands.command()
+    async def answer(self,ctx,*,question):
         answers = ['Yes','No','Maybe']
         await ctx.send(f'Q:{question}\nA:{random.choice(answers)}')
 

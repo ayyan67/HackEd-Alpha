@@ -9,12 +9,12 @@ class Example(commands.Cog):
 
     @commands.Cog.listener()
     async def on_ready(self):
-        print("Pick Ready")
+        print("Guess Ready")
 
     @commands.command()
-    async def pick(self,ctx,*,choices):
-        stuff = choices.split()
-        await ctx.send(f'{random.choice(stuff)} seems like a good option.')
+    async def guess(self,ctx):
+        await ctx.send("Pick a number from 0-100:")
+
 
 def setup(client):
     client.add_cog(Example(client))
